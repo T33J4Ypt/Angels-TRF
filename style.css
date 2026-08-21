@@ -4,11 +4,11 @@
 }
 
 body {
-  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+  background: #080808 linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
               url('https://r2.fivemanage.com/0WdbwK7kj5K3TKthTbrQ4/LAUXRumS_U1J31ake9RISHOQ4o6LRsLcuB2A2AckE9HQxWv6efYFfXhqEDC3GqbFArzpWxr441nXE9qmAplZ3Hjh.jpg') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  color: #ffffff;
+  font-family: 'Times New Roman', Georgia, serif; /* Tradicional oriental vibe */
+  color: #e6e6e6;
   margin: 0;
   padding: 20px 10px;
   min-height: 100vh;
@@ -23,72 +23,76 @@ body {
 h1 {
   font-size: 2.8rem;
   margin: 10px 0 5px 0;
-  color: #ff3333;
-  text-shadow: 0 0 12px rgba(255, 0, 0, 0.6), 2px 2px 4px #000;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(211, 47, 47, 0.8), 2px 2px 4px #000;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 3px;
 }
 
 .subtitle {
   text-align: center;
-  color: #ffffcc;
+  color: #cc0000;
   margin-bottom: 25px;
   font-size: 1.1rem;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 1.4rem;
-  color: #ffcc00;
+  font-size: 1.3rem;
+  color: #ffffff;
   margin: 0 0 15px 0;
   text-align: left;
-  border-bottom: 2px solid rgba(255, 204, 0, 0.3);
+  border-bottom: 1px solid rgba(211, 47, 47, 0.4);
   padding-bottom: 8px;
+  letter-spacing: 1.5px;
 }
 
-/* Envoltório das Tabelas com Glassmorphism */
+/* Envoltório das Tabelas (Estilo do Menu da Imagem) */
 .table-card {
-  background: rgba(15, 15, 15, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  background: rgba(10, 10, 10, 0.92);
+  border: 1px solid rgba(211, 47, 47, 0.35);
+  border-radius: 8px;
   padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.85), inset 0 0 15px rgba(211, 47, 47, 0.05);
   overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 th, td {
   padding: 12px 14px;
   text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   font-size: 0.95rem;
 }
 
 th {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #ffcc00;
+  background-color: rgba(20, 20, 20, 0.8);
+  color: #e6e6e6;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #d32f2f;
 }
 
 /* Inputs de Quantidade */
 input[type="number"] {
-  width: 75px;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 70px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(211, 47, 47, 0.5);
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #ffcc00;
+  background-color: #050505;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: bold;
   outline: none;
@@ -96,29 +100,97 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-  border-color: #ffcc00;
-  box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+  border-color: #ff3333;
+  box-shadow: 0 0 8px rgba(255, 51, 51, 0.6);
 }
 
-/* Badges e Lista de Ingredientes */
+/* Subtexto em Japonês */
+.jp-subtext {
+  font-size: 0.8rem;
+  color: #d32f2f;
+  margin-top: 2px;
+  font-family: serif;
+}
+
+/* Estilização de Preços conforme o Menu */
+.price-normal {
+  color: #cc3333;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.05rem;
+}
+
+.price-discount {
+  color: #ff3333;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.05rem;
+  text-shadow: 0 0 5px rgba(255, 51, 51, 0.3);
+}
+
+.highlight-text {
+  color: #ffffff;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Badges de Ingredientes */
 .ingredient-badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(211, 47, 47, 0.15);
+  color: #ffffff;
   padding: 3px 8px;
   border-radius: 4px;
   margin: 2px 4px 2px 0;
-  font-size: 0.88rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  border: 1px solid rgba(211, 47, 47, 0.3);
 }
 
 .empty-msg {
   text-align: center;
-  color: #888;
+  color: #666;
   font-style: italic;
   padding: 20px;
 }
 
-/* Botões */
+/* Navegação por Abas */
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  font-family: sans-serif;
+}
+
+.nav-btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  background: #0d0d0d;
+  color: #aaaaaa;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid rgba(211, 47, 47, 0.3);
+  transition: all 0.2s ease;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.nav-btn:hover {
+  background: rgba(211, 47, 47, 0.2);
+  color: #ffffff;
+  border-color: #ff3333;
+}
+
+.nav-btn.active {
+  background: #d32f2f;
+  color: #ffffff;
+  border-color: #ff3333;
+  box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+}
+
+/* Botões de Ação */
 .actions {
   display: flex;
   justify-content: flex-end;
@@ -126,28 +198,79 @@ input[type="number"]:focus {
 }
 
 button {
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
   cursor: pointer;
   border: none;
   font-weight: bold;
   transition: all 0.2s ease;
+  text-transform: uppercase;
 }
 
 .button-secondary {
-  background-color: #dc3545;
-  color: white;
+  background-color: #1a0505;
+  color: #ff4d4d;
+  border: 1px solid #d32f2f;
 }
 
 .button-secondary:hover {
-  background-color: #bd2130;
-  transform: translateY(-2px);
+  background-color: #d32f2f;
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.5);
+}
+
+/* Dashboard de Resumo de Totais */
+.totals-summary {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: sans-serif;
+}
+
+.total-box {
+  flex: 1;
+  min-width: 180px;
+  background: rgba(5, 5, 5, 0.8);
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.total-box span {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.total-box strong {
+  font-size: 1.4rem;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+.total-box.highlight {
+  border-color: rgba(211, 47, 47, 0.5);
+}
+
+.total-box.highlight strong {
+  color: #ff3333;
+  text-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
+}
+
+.total-box.eco strong {
+  color: #28a745;
 }
 
 /* Ajustes Responsivos Mobile */
 @media screen and (max-width: 600px) {
   h1 { font-size: 2rem; }
   th, td { padding: 8px 10px; font-size: 0.85rem; }
-  input[type="number"] { width: 60px; padding: 5px; }
+  input[type="number"] { width: 55px; padding: 4px; }
+  .nav-btn { padding: 8px 12px; font-size: 0.75rem; }
 }
