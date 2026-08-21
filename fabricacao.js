@@ -86,7 +86,7 @@ function atualizarTotais() {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${ingrediente}</td>
-      <td><strong style="color:#ffcc00; font-size: 1.1rem;">${qtd}</strong></td>
+      <td><strong style="color:#ff3333; font-size: 1.1rem;">${qtd}</strong></td>
     `;
     tabelaTotais.appendChild(tr);
   });
