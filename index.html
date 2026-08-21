@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soul Sushi - Calculadora de Fabricação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Soul Sushi</h1>
+    <p class="subtitle">Calculadora de Materiais & Receitas</p>
+
+    <div class="actions">
+      <button id="btn-limpar" class="button-secondary">Limpar Tudo</button>
+    </div>
+
+    <!-- Tabela de Receitas -->
+    <div class="table-card">
+      <h2>Receitas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Qtd. Desejada</th>
+            <th>Materiais Necessários</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-fabricacao"></tbody>
+      </table>
+    </div>
+
+    <!-- Tabela de Totais -->
+    <div class="table-card">
+      <h2>Total de Materiais Necessários</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Quantidade Total</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-totais">
+          <tr>
+            <td colspan="2" class="empty-msg">Nenhum item selecionado</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="fabricacao.js"></script>
+</body>
+</html>
