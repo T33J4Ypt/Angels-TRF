@@ -4,14 +4,24 @@
 }
 
 body {
-  background: #080808 linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-              url('Koi.jpg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Times New Roman', Georgia, serif; /* Tradicional oriental vibe */
-  color: #e6e6e6;
   margin: 0;
   padding: 20px 10px;
   min-height: 100vh;
+  font-family: 'Times New Roman', Georgia, serif;
+  color: #e6e6e6;
+
+  /* Cor de fundo base */
+  background-color: #080808;
+
+  /* Camada de gradiente escuro + Imagem de Fundo */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('Koi.jpg');
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .container {
@@ -22,22 +32,12 @@ body {
 /* Títulos */
 h1 {
   font-size: 2.8rem;
-  margin: 10px 0 5px 0;
+  margin: 10px 0 20px 0;
   color: #ffffff;
   text-shadow: 0 0 10px rgba(211, 47, 47, 0.8), 2px 2px 4px #000;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
-}
-
-.subtitle {
-  text-align: center;
-  color: #cc0000;
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  font-family: sans-serif;
-  text-transform: uppercase;
 }
 
 h2 {
@@ -50,7 +50,7 @@ h2 {
   letter-spacing: 1.5px;
 }
 
-/* Envoltório das Tabelas (Estilo do Menu da Imagem) */
+/* Envoltório das Tabelas (Estilo do Menu) */
 .table-card {
   background: rgba(10, 10, 10, 0.92);
   border: 1px solid rgba(211, 47, 47, 0.35);
@@ -104,15 +104,7 @@ input[type="number"]:focus {
   box-shadow: 0 0 8px rgba(255, 51, 51, 0.6);
 }
 
-/* Subtexto em Japonês */
-.jp-subtext {
-  font-size: 0.8rem;
-  color: #d32f2f;
-  margin-top: 2px;
-  font-family: serif;
-}
-
-/* Estilização de Preços conforme o Menu */
+/* Estilização de Preços */
 .price-normal {
   color: #ffffff;
   font-weight: bold;
@@ -261,10 +253,6 @@ button {
 .total-box.highlight strong {
   color: #ff3333;
   text-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
-}
-
-.total-box.eco strong {
-  color: #28a745;
 }
 
 /* Ajustes Responsivos Mobile */
