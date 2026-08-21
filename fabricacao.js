@@ -1,182 +1,100 @@
 const receitas = [
-  {
-    nome: "Sushi",
-    producao: 2,
-    ingredientes: {
-      "Arroz": 2,
-      "Peixe": 2,
-      "Alga Nori": 2,
-    }
-  },
-  {
-    nome: "Ramen",
-    producao: 2,
-    ingredientes: {
-      "Carne Crua": 2,
-      "Massa Instantânea": 2,
-      "Levedura Industrial": 2,
-    }
-  },
-  {
-    nome: "Noodles do Mar",
-    producao: 2,
-    ingredientes: {
-      "Peixe": 2,
-      "Massa Instantânea": 2,
-      "Cebola": 2,
-    }
-  },
-  {
-    nome: "Caixa Soul Sushi",
-    producao: 3,
-    ingredientes: {
-      "Saquê": 3,
-      "Sushi": 3,
-    }
-  },
-  {
-    nome: "Caixa Soul Sushi 2",
-    producao: 3,
-    ingredientes: {
-      "Limonada": 3,
-      "Ramen": 3,
-      }
-  },
-  {
-    nome: "Caixa Soul Sushi 3",
-    producao: 3,
-    ingredientes: {
-      "Noodles do Mar": 3,
-      "Chá Verde": 3,
-      }
-  },
-  {
-    nome: "Saquê",
-    producao: 2,
-    ingredientes: {
-      "Arroz": 2,
-      "Levedura Industrial": 2,
-      "Álcool": 2
-      }
-  },
-  {
-    nome: "Limonada",
-    producao: 2,
-    ingredientes: {
-      "Torrões de Açucar": 2,
-      "Garrafa de Água": 2,
-      "Lima": 2,
-      }
-  },
-  {
-    nome: "Chá Verde",
-    producao: 2,
-    ingredientes: {
-      "Lima": 1,
-      "Torrões de Açucar": 2,
-      "Garrafa de Água": 3,
-      }
-  },
-  {
-    nome: "Soul Speed",
-    producao: 2,
-    ingredientes: {
-      "Manga": 2,
-      "Torrões de Açucar": 2,
-      "Lima": 2,
-    }
-  }
+  { nome: "Sushi", producao: 2, ingredientes: { "Arroz": 2, "Peixe": 2, "Alga Nori": 2 } },
+  { nome: "Ramen", producao: 2, ingredientes: { "Carne Crua": 2, "Massa Instantânea": 2, "Levedura Industrial": 2 } },
+  { nome: "Noodles do Mar", producao: 2, ingredientes: { "Peixe": 2, "Massa Instantânea": 2, "Cebola": 2 } },
+  { nome: "Caixa Soul Sushi", producao: 3, ingredientes: { "Saquê": 3, "Sushi": 3 } },
+  { nome: "Caixa Soul Sushi 2", producao: 3, ingredientes: { "Limonada": 3, "Ramen": 3 } },
+  { nome: "Caixa Soul Sushi 3", producao: 3, ingredientes: { "Noodles do Mar": 3, "Chá Verde": 3 } },
+  { nome: "Saquê", producao: 2, ingredientes: { "Arroz": 2, "Levedura Industrial": 2, "Álcool": 2 } },
+  { nome: "Limonada", producao: 2, ingredientes: { "Torrões de Açucar": 2, "Garrafa de Água": 2, "Lima": 2 } },
+  { nome: "Chá Verde", producao: 2, ingredientes: { "Lima": 1, "Torrões de Açucar": 2, "Garrafa de Água": 3 } },
+  { nome: "Soul Speed", producao: 2, ingredientes: { "Manga": 2, "Torrões de Açucar": 2, "Lima": 2 } }
 ];
 
-const tabela = document.getElementById("tabela-fabricacao");
+const tabelaFabricacao = document.getElementById("tabela-fabricacao");
+const tabelaTotais = document.getElementById("tabela-totais");
+const btnLimpar = document.getElementById("btn-limpar");
 
+// Renderizar Tabela Inicial
 receitas.forEach((r, i) => {
   const tr = document.createElement("tr");
 
-  const tdNome = document.createElement("td");
-  tdNome.textContent = r.nome;
+  tr.innerHTML = `
+    <td><strong>${r.nome}</strong> <small style="color:#aaa;">(x${r.producao})</small></td>
+    <td>
+      <input type="number" min="0" value="0" data-index="${i}" class="input-qtd">
+    </td>
+    <td id="res-${i}">-</td>
+  `;
 
-  const tdInput = document.createElement("td");
-  const input = document.createElement("input");
-  input.type = "number";
-  input.min = 0;
-  input.value = 0;
-  input.dataset.index = i;
-  tdInput.appendChild(input);
-
-  const tdResultado = document.createElement("td");
-  tdResultado.id = "res-" + i;
-  tdResultado.innerHTML = "-";
-
-  tr.appendChild(tdNome);
-  tr.appendChild(tdInput);
-  tr.appendChild(tdResultado);
-  tabela.appendChild(tr);
-
-  input.addEventListener("input", () => atualizarResultados(i, input.value));
+  tabelaFabricacao.appendChild(tr);
 });
 
-function atualizarResultados(index, qtdDesejada) {
-  const receita = receitas[index];
-  const resultado = {};
+// Event Listener Centralizado para Inputs
+tabelaFabricacao.addEventListener("input", (e) => {
+  if (e.target.classList.contains("input-qtd")) {
+    const index = e.target.dataset.index;
+    const qtd = parseInt(e.target.value) || 0;
+    atualizarLinhaReceita(index, qtd);
+    atualizarTotais();
+  }
+});
 
-const multiplicador = Math.ceil(qtdDesejada / receita.producao);
-
-  for (const ingrediente in receita.ingredientes) {
-    resultado[ingrediente] = Math.ceil(
-      receita.ingredientes[ingrediente] * multiplicador
-    );
+function atualizarLinhaReceita(index, qtdDesejada) {
+  const tdResultado = document.getElementById(`res-${index}`);
+  
+  if (qtdDesejada <= 0) {
+    tdResultado.innerHTML = "-";
+    return;
   }
 
-  document.getElementById("res-" + index).innerHTML =
-    Object.entries(resultado)
-      .map(([ing, qtd]) => `${qtd} ${ing}`)
-      .join("<br>");
+  const receita = receitas[index];
+  const lotes = Math.ceil(qtdDesejada / receita.producao);
+  
+  const badgesHTML = Object.entries(receita.ingredientes)
+    .map(([ing, qtdBase]) => `<span class="ingredient-badge">${lotes * qtdBase}x ${ing}</span>`)
+    .join(" ");
 
-  atualizarTotais();
+  tdResultado.innerHTML = badgesHTML;
 }
+
 function atualizarTotais() {
-
   const totais = {};
+  const inputs = document.querySelectorAll(".input-qtd");
 
-  document.querySelectorAll("input").forEach((input, index) => {
-
-    const quantidade = Number(input.value);
-
+  inputs.forEach((input) => {
+    const quantidade = parseInt(input.value) || 0;
     if (quantidade <= 0) return;
 
-    const receita = receitas[index];
+    const receita = receitas[input.dataset.index];
+    const lotes = Math.ceil(quantidade / receita.producao);
 
-const multiplicador = Math.ceil(quantidade / receita.producao);
-
-    for (const ingrediente in receita.ingredientes) {
-
-      const qtd = Math.ceil(
-        receita.ingredientes[ingrediente] * multiplicador
-      );
-
-      totais[ingrediente] = (totais[ingrediente] || 0) + qtd;
+    for (const [ingrediente, qtdBase] of Object.entries(receita.ingredientes)) {
+      totais[ingrediente] = (totais[ingrediente] || 0) + (lotes * qtdBase);
     }
-
   });
 
-  const tabela = document.getElementById("tabela-totais");
+  tabelaTotais.innerHTML = "";
+  const listaTotais = Object.entries(totais).sort((a, b) => a[0].localeCompare(b[0]));
 
-  tabela.innerHTML = "";
+  if (listaTotais.length === 0) {
+    tabelaTotais.innerHTML = '<tr><td colspan="2" class="empty-msg">Nenhum item selecionado</td></tr>';
+    return;
+  }
 
-  Object.entries(totais)
-    .sort((a, b) => a[0].localeCompare(b[0]))
-    .forEach(([ingrediente, qtd]) => {
-
-      const tr = document.createElement("tr");
-
-      tr.innerHTML = `
-        <td>${ingrediente}</td>
-        <td><strong>${qtd}</strong></td>
-      `;
-
-      tabela.appendChild(tr);
-
-    });
-
+  listaTotais.forEach(([ingrediente, qtd]) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${ingrediente}</td>
+      <td><strong style="color:#ffcc00; font-size: 1.1rem;">${qtd}</strong></td>
+    `;
+    tabelaTotais.appendChild(tr);
+  });
 }
+
+// Botão Limpar
+btnLimpar.addEventListener("click", () => {
+  document.querySelectorAll(".input-qtd").forEach(input => input.value = 0);
+  receitas.forEach((_, i) => document.getElementById(`res-${i}`).innerHTML = "-");
+  atualizarTotais();
+});
