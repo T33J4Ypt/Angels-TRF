@@ -1,10 +1,8 @@
-// Configuração dos produtos e preços baseados na imagem
+// Array contendo apenas os 3 produtos solicitados
 const produtos = [
-  { nome: "Pops", sub: "ポップス", semParceria: 20000, comParceria: 15000 },
-  { nome: "Menus de Carne", sub: "肉メニュー", semParceria: 50000, comParceria: 40000 },
-  { nome: "Menus de Peixe", sub: "魚メニュー", semParceria: 35000, comParceria: 30000 },
-  { nome: "Soul Speed", sub: "ソウルスピード", semParceria: 25000, comParceria: 20000 },
-  { nome: "Caixa Soul Sushi", sub: "ソウルボックス", semParceria: 100000, comParceria: 85000 }
+  { nome: "Pops", semParceria: 20000, comParceria: 15000 },
+  { nome: "Menu de Carne", semParceria: 50000, comParceria: 40000 },
+  { nome: "Menu de Peixe", semParceria: 35000, comParceria: 30000 }
 ];
 
 const tabelaPrecos = document.getElementById("tabela-precos");
@@ -14,22 +12,17 @@ function formatarMoeda(valor) {
   return "€" + valor.toLocaleString("pt-PT");
 }
 
-// Renderizar linhas
+// Renderizar linhas da tabela
 produtos.forEach((prod, i) => {
   const tr = document.createElement("tr");
 
   tr.innerHTML = `
-    <td>
-      <strong>${prod.nome}</strong>
-      <div class="jp-subtext">${prod.sub}</div>
-    </td>
+    <td><strong>${prod.nome}</strong></td>
     <td>
       <input type="number" min="0" value="0" data-index="${i}" class="input-qtd-preco">
     </td>
-    <td class="price-normal">${formatarMoeda(prod.semParceria)}</td>
-    <td class="price-discount">${formatarMoeda(prod.comParceria)}</td>
-    <td id="sub-sem-${i}">€0</td>
-    <td id="sub-com-${i}" class="highlight-text">€0</td>
+    <td id="sub-sem-${i}" class="price-normal">€0</td>
+    <td id="sub-com-${i}" class="price-discount">€0</td>
   `;
 
   tabelaPrecos.appendChild(tr);
@@ -65,7 +58,6 @@ function calcularTotais() {
 
   document.getElementById("total-sem-parceria").textContent = formatarMoeda(totalSem);
   document.getElementById("total-com-parceria").textContent = formatarMoeda(totalCom);
-  document.getElementById("total-economia").textContent = formatarMoeda(totalSem - totalCom);
 }
 
 // Botão Limpar
