@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soul Sushi - Tabela de Preços</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Soul Sushi</h1>
+    
+    <!-- Navegação entre Páginas -->
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-btn">Calculadora de Fabricação</a>
+      <a href="precos.html" class="nav-btn active">Tabela de Preços</a>
+    </nav>
+
+    <div class="actions">
+      <button id="btn-limpar-precos" class="button-secondary">Limpar Quantidades</button>
+    </div>
+
+    <!-- Tabela de Vendas -->
+    <div class="table-card">
+      <h2>Tabela de Produtos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Qtd.</th>
+            <th>Sem Parceria (Unit.)</th>
+            <th>Com Parceria (Unit.)</th>
+            <th>Subtotal S/ Parceria</th>
+            <th>Subtotal C/ Parceria</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-precos"></tbody>
+      </table>
+    </div>
+
+    <!-- Totais Finais -->
+    <div class="table-card">
+      <h2>Resumo da Venda</h2>
+      <div class="totals-summary">
+        <div class="total-box">
+          <span>Total Sem Parceria</span>
+          <strong id="total-sem-parceria">€0</strong>
+        </div>
+        <div class="total-box highlight">
+          <span>Total Com Parceria</span>
+          <strong id="total-com-parceria">€0</strong>
+        </div>
+        <div class="total-box eco">
+          <span>Desconto Total</span>
+          <strong id="total-economia">€0</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="precos.js"></script>
+</body>
+</html>
