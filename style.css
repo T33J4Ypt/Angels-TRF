@@ -114,7 +114,7 @@ input[type="number"]:focus {
 
 /* Estilização de Preços conforme o Menu */
 .price-normal {
-  color: #cc3333;
+  color: #ffffff;
   font-weight: bold;
   font-family: monospace;
   font-size: 1.05rem;
