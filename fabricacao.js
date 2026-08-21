@@ -15,12 +15,12 @@ const tabelaFabricacao = document.getElementById("tabela-fabricacao");
 const tabelaTotais = document.getElementById("tabela-totais");
 const btnLimpar = document.getElementById("btn-limpar");
 
-// Renderizar Tabela Inicial
+// Renderizar Tabela Inicial (Sem o indicador (xN))
 receitas.forEach((r, i) => {
   const tr = document.createElement("tr");
 
   tr.innerHTML = `
-    <td><strong>${r.nome}</strong> <small style="color:#aaa;">(x${r.producao})</small></td>
+    <td><strong>${r.nome}</strong></td>
     <td>
       <input type="number" min="0" value="0" data-index="${i}" class="input-qtd">
     </td>
