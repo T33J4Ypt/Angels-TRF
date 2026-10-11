@@ -16,7 +16,7 @@ body {
   /* Camada de gradiente escuro + Imagem de Fundo */
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('koi.jpg');
+    url('AOD.png');
 
   background-position: center center;
   background-repeat: no-repeat;
