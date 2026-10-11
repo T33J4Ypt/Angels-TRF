@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angels of Death - Tabela de Preços</title>
+  <title>Soul Sushi - Tabela de Preços</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="container">
-    <h1>Angels of Death</h1>
+    <h1>Soul Sushi</h1>
     
     <!-- Navegação entre Páginas -->
     <nav class="nav-tabs">
@@ -21,7 +21,7 @@
       <button id="btn-limpar-precos" class="button-secondary">Limpar Tudo</button>
     </div>
 
-    <!-- Tabela de Vendas -->
+    <!-- Tabela Principal de Produtos -->
     <div class="table-card">
       <h2>Tabela de Produtos</h2>
       <table>
@@ -33,7 +33,23 @@
             <th>Subtotal C/ Parceria</th>
           </tr>
         </thead>
-        <tbody id="tabela-precos"></tbody>
+        <tbody id="tabela-geral"></tbody>
+      </table>
+    </div>
+
+    <!-- Tabela de Itens de Assalto -->
+    <div class="table-card">
+      <h2>Itens de Assalto</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Qtd.</th>
+            <th>Subtotal S/ Parceria</th>
+            <th>Subtotal C/ Parceria</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-assalto"></tbody>
       </table>
     </div>
 
