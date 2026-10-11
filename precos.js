@@ -1,8 +1,22 @@
 // Array contendo apenas os 3 produtos solicitados
 const produtos = [
-  { nome: "Pops", semParceria: 20000, comParceria: 15000 },
-  { nome: "Menu de Carne", semParceria: 50000, comParceria: 40000 },
-  { nome: "Menu de Peixe", semParceria: 35000, comParceria: 30000 }
+  { nome: "Motas", semParceria: 800000, comParceria: 600000 },
+  { nome: "Coletes", semParceria: 25000, comParceria: 20000 },
+  { nome: "Munição 9mm", semParceria: 7000, comParceria: 5500 },
+  { nome: "Munição 5.56mm", semParceria: 7500, comParceria: 6000 },
+  { nome: "Munição 7.62mm", semParceria: 8500, comParceria: 7000 },
+  { nome: "Cartucho", semParceria: 8000, comParceria: 6500 },
+  { nome: "Granadas de Fumo", semParceria: 30000, comParceria: 20000 },
+  { nome: "Assault Shotgun", semParceria: 250000, comParceria: 215000 },
+  { nome: "Granadas de Fumo", semParceria: 280000, comParceria: 240000 },
+  { nome: "Berbequim", semParceria: 11000, comParceria: 9000 },
+  { nome: "C4", semParceria: 8500, comParceria: 7000 },
+  { nome: "DigiScanner", semParceria: 5000, comParceria: 3000 },
+  { nome: "Weld Machine", semParceria: 5500, comParceria: 4000 },
+  { nome: "SafeCracker", semParceria: 7500, comParceria: 6000 },
+  { nome: "GlassCutter", semParceria: 8500, comParceria: 7000 },
+  { nome: "Laptop", semParceria: 6000, comParceria: 4500 },
+  { nome: "Thermite Bomb", semParceria: 5000, comParceria: 35000 }
 ];
 
 const tabelaPrecos = document.getElementById("tabela-precos");
