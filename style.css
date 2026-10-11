@@ -262,3 +262,8 @@ button {
   input[type="number"] { width: 55px; padding: 4px; }
   .nav-btn { padding: 8px 12px; font-size: 0.75rem; }
 }
+
+/* Linha separadora para os Itens de Assalto */
+tr.separator-row td {
+  border-top: 2px solid rgba(211, 47, 47, 0.6);
+}
