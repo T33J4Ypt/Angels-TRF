@@ -1,4 +1,4 @@
-// Array contendo apenas os 3 produtos solicitados
+// Array atualizado com todos os produtos
 const produtos = [
   { nome: "Motas", semParceria: 800000, comParceria: 600000 },
   { nome: "Coletes", semParceria: 25000, comParceria: 20000 },
@@ -16,7 +16,7 @@ const produtos = [
   { nome: "SafeCracker", semParceria: 7500, comParceria: 6000 },
   { nome: "GlassCutter", semParceria: 8500, comParceria: 7000 },
   { nome: "Laptop", semParceria: 6000, comParceria: 4500 },
-  { nome: "Thermite Bomb", semParceria: 5000, comParceria: 35000 }
+  { nome: "Thermite Bomb", semParceria: 5000, comParceria: 3500 }
 ];
 
 const tabelaPrecos = document.getElementById("tabela-precos");
@@ -29,6 +29,11 @@ function formatarMoeda(valor) {
 // Renderizar linhas da tabela
 produtos.forEach((prod, i) => {
   const tr = document.createElement("tr");
+
+  // Se for o índice do "Berbequim" (índice 9), adicionamos uma classe para criar a linha separadora
+  if (prod.nome === "Berbequim") {
+    tr.classList.add("separator-row");
+  }
 
   tr.innerHTML = `
     <td><strong>${prod.nome}</strong></td>
