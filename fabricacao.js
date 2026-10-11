@@ -1,14 +1,7 @@
 const receitas = [
-  { nome: "Sushi", producao: 2, ingredientes: { "Arroz": 2, "Peixe": 2, "Alga Nori": 2 } },
-  { nome: "Ramen", producao: 2, ingredientes: { "Carne Crua": 2, "Massa Instantânea": 2, "Levedura Industrial": 2 } },
-  { nome: "Noodles do Mar", producao: 2, ingredientes: { "Peixe": 2, "Massa Instantânea": 2, "Cebola": 2 } },
-  { nome: "Caixa Soul Sushi", producao: 3, ingredientes: { "Saquê": 3, "Sushi": 3 } },
-  { nome: "Caixa Soul Sushi 2", producao: 3, ingredientes: { "Limonada": 3, "Ramen": 3 } },
-  { nome: "Caixa Soul Sushi 3", producao: 3, ingredientes: { "Noodles do Mar": 3, "Chá Verde": 3 } },
-  { nome: "Saquê", producao: 2, ingredientes: { "Arroz": 2, "Levedura Industrial": 2, "Álcool": 2 } },
-  { nome: "Limonada", producao: 2, ingredientes: { "Torrões de Açucar": 2, "Garrafa de Água": 2, "Lima": 2 } },
-  { nome: "Chá Verde", producao: 2, ingredientes: { "Lima": 1, "Torrões de Açucar": 2, "Garrafa de Água": 3 } },
-  { nome: "Soul Speed", producao: 2, ingredientes: { "Manga": 2, "Torrões de Açucar": 2, "Lima": 2 } }
+  { nome: "Motas", producao: 1, ingredientes: { "Kit Ferramentas": 1, "Ferro": 50, "Parafusos": 50, "Rodas de Mota": 2, "Sucata":25 } },
+  { nome: "Pólvora", producao: 10, ingredientes: { "Frasco": 10, "Carvão": 17, "Enxofre": 17 } },
+  { nome: "Assault Shotgun", producao: 1, ingredientes: { "Projecto SMG": 1, "Corpo Shotgun": 1, "Peças": 14 } },
 ];
 
 const tabelaFabricacao = document.getElementById("tabela-fabricacao");
