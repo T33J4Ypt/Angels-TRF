@@ -2,6 +2,7 @@ const receitas = [
   { nome: "Motas", producao: 1, ingredientes: { "Kit Ferramentas": 1, "Ferro": 50, "Parafusos": 50, "Rodas de Mota": 2, "Sucata":25 } },
   { nome: "Pólvora", producao: 10, ingredientes: { "Frasco": 10, "Carvão": 17, "Enxofre": 17 } },
   { nome: "Assault Shotgun", producao: 1, ingredientes: { "Projecto SMG": 1, "Corpo Shotgun": 1, "Peças": 14 } },
+  { nome: "Coletes", producao: 3, ingredientes: { "Sucata": 40, "Nylon": 45, "Tecido": 55 } }
 ];
 
 const tabelaFabricacao = document.getElementById("tabela-fabricacao");
