@@ -8,7 +8,7 @@ const produtos = [
   { nome: "Cartucho", semParceria: 8000, comParceria: 6500 },
   { nome: "Granadas de Fumo", semParceria: 30000, comParceria: 20000 },
   { nome: "Assault Shotgun", semParceria: 250000, comParceria: 215000 },
-  { nome: "Granadas de Fumo", semParceria: 280000, comParceria: 240000 },
+  { nome: "Heavy Shotgun", semParceria: 280000, comParceria: 240000 },
   { nome: "Berbequim", semParceria: 11000, comParceria: 9000 },
   { nome: "C4", semParceria: 8500, comParceria: 7000 },
   { nome: "DigiScanner", semParceria: 5000, comParceria: 3000 },
